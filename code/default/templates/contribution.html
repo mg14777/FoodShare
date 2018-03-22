@@ -1,0 +1,37 @@
+{% extends "templates/index.html" %}
+{% block page_content %}
+  <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+	<div flex-xs flex-gt-xs="60" layout-align="center center">
+		<md-card>
+			<div class="contribution-image" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url({{'/imgsrv?key='+contribution.key}})">
+			<!--<img src="/imgsrv?key={{contribution.key}}">-->
+				<div class="contribution-details">
+					<span class="contribution-details-heading">{{contribution.food}}</span>
+					<br>
+					<span class="contribution-details-subhead">
+						<i class="material-icons md-48">location_on</i>
+						University of Bristol, BS8 1UB
+					</span>
+					<!--<span>{{contribution.location}}</span>-->
+				</div>
+			</div>
+			<div layout="row" layout-padding>
+				<div flex>
+					<div>
+						<h2>Contributor</h2>
+						<span>{{contribution.contributor}}</span>
+					</div>
+					<div class="contribution-description">
+						<h2>Description</h2>
+						<p>{{contribution.description}}</p>
+					</div>
+				</div>
+				<div flex layout="column" layout-align="start end">
+					<a href="/consume?key={{contribution.key}}"><md-button class="md-accent md-raised">Consume</md-button></a>
+					<md-button class="md-accent md-raised" ng-click="foodShareCtrl.showContributeForm($event)">Get Directions</md-button>
+				</div>
+			</div>
+		</md-card>
+	</div>
+	</md-content>
+{% endblock %}

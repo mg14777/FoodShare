@@ -1,0 +1,88 @@
+{% extends "templates/index.html" %}
+{% block page_label%}
+	<h2 class="page-title" flex md-truncate>DASHBOARD</h2>
+{% endblock %}
+{% block page_content %}
+<div layout="row" layout-align="center start">
+		<md-card layout-padding flex="40">
+			<md-card-title>
+	          <md-card-title-text>
+	            <span class="md-headline">Contribution History</span>
+	          </md-card-title-text>
+       		</md-card-title>
+       		{% if not page_data.active_contributions and not page_data.consumed_contributions %}
+       			<md-card-content style="height: 300px; overflow-y: auto;" layout="column" layout-align="center center">
+					<p style="color: #D3D3D3;">No contributions so far</p>
+				</md-card-content>
+			{% else %}
+				<md-card-content style="height: 300px; overflow-y: auto;">
+						{% for contribution in page_data.active_contributions %}
+							<md-list-item class="md-2-line">
+					          <img src="/imgsrv?key={{contribution.key}}" class="md-avatar"/>
+					          <div class="md-list-item-text" layout="column" layout-align="start start">
+					            <span>{{ contribution.food }}</span>
+					            <p>{{ contribution.timestamp.date() }}</p>
+					          </div>
+					        </md-list-item>
+					        <md-divider ></md-divider>
+					    {% endfor %}
+						{% for contribution in page_data.consumed_contributions %}
+							<md-list-item class="md-2-line">
+					          <img src="/imgsrv?key={{contribution.key}}" class="md-avatar"/>
+					          <div class="md-list-item-text" layout="column" layout-align="start start">
+					            <span>{{ contribution.food }} (consumed) </span>
+					            <p>{{ contribution.timestamp.date() }}</p>
+					          </div>
+					        </md-list-item>
+					        <md-divider ></md-divider>
+					    {% endfor %}
+				</md-card-content>
+			{% endif %}
+			<!--
+			<md-card-actions layout="row" layout-align="end center">
+	          <md-button class="md-primary md-raised" ng-click="foodShareCtrl.showContributeForm($event)">Contribute</md-button>
+        	</md-card-actions>
+        	-->
+	    </md-card>
+
+
+	    <md-card layout-padding flex="40">   
+	    	<md-card-title>
+	          <md-card-title-text>
+	            <span class="md-headline">Consumption History</span>
+	          </md-card-title-text>
+       		</md-card-title>   
+			<md-card-content style="height: 300px; overflow-y: auto">
+			{% if not page_data.consumptions %}
+       			<md-card-content style="height: 300px; overflow-y: auto;" layout="column" layout-align="center center">
+					<p style="color: #D3D3D3;">No consumptions so far</p>
+				</md-card-content>
+			{% else %}
+				{% for consumption in page_data.consumptions %}
+					<md-list-item class="md-2-line">
+			          <img src="/imgsrv?key={{consumption.key}}" class="md-avatar"/>
+			          <div class="md-list-item-text" layout="column" layout-align="start start">
+			            <span>{{ consumption.food }}</span>
+			            <p>{{ consumption.timestamp.date() }}</p>
+			          </div>
+			        </md-list-item>
+			        <md-divider ></md-divider>
+			    {% endfor %}
+			{% endif %}
+			</md-card-content>
+			<!--
+			<md-card-actions layout="row" layout-align="end center">
+	          <md-button class="md-primary md-raised">Consume</md-button>
+        	</md-card-actions>
+        	-->
+	    </md-card>
+</div>
+<div layout-padding>
+	<h2>Contributions in your neighbourhood</h2>
+	<div id="nearby-food-map"></div>
+</div>
+<script type="text/javascript" src="/js/neighbourhood-contributions.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyRggT3qkX354uU6cxeTbe-A7iOfgacbk"
+async defer></script>
+
+{% endblock %}

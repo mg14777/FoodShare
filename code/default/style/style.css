@@ -1,0 +1,67 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.navbar-button {
+    font-size: 11px !important;
+}
+.navbar-contents {
+	font-size: 17px;
+}
+.page-title {
+	text-align: center;
+}
+.landing-page {
+	background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ), url('../resources/food-share-landing.jpg');
+	background-size: cover;
+	padding-top: 12%;
+	height: 50%;
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	font-family: 'Montserrat', sans-serif;
+	background-attachment: fixed;
+}
+.landing-page-subtitle {
+	font-size: 22px;
+	display: block;
+	padding-top: 20px;
+}
+.item md-grid-tile-footer {
+  background: rgba(1, 1, 1, 0);
+  color: black;
+}
+.item-image {
+	height: 225px;
+	object-fit: cover;
+
+}
+.contribution-image {
+	background-size: cover;
+    height: 45%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.contribution-details {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 60%;
+    width: 100%;
+    color: #fff;
+}
+.contribution-details-heading {
+	font-size: 50px;
+}
+.contribution-details-subhead {
+	font-size: 25px;
+}
+.top-contributions-subhead {
+	padding-top: 0px !important;
+}
+#nearby-food-map {
+	height: 400px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}

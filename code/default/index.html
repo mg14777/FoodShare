@@ -1,0 +1,99 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body ng-app="freeFoodApp" ng-cloak>
+  <p ng-controller="topPicksController as topPicks">
+    {{topPicks.allData.pizza}}
+  </p>
+  <md-content>
+     <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+
+        <h2 flex md-truncate>Free Food</h2>
+
+        <md-button class="md-raised" >
+          Login
+        </md-button>
+
+        <md-button class="md-raised" aria-label="More">
+          Register
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-card >
+      <md-card-title>
+        <h2>Top Picks</h2>
+      </md-card-title>
+      <md-card-content>
+        <md-grid-list
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="8"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+
+          <md-grid-tile class="item"
+              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+            <img src="resources/pizza.jpg" class="item-image">
+            <md-grid-tile-footer>
+              <h3>Contributer: Jack</h3>
+              <h3>Item: Pizza</h3>
+              <h3>Reputation: 4.5/5.0</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+
+          <md-grid-tile class="md-hue-3"
+              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+            <md-grid-tile-footer>
+              <h3>Image 1</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+
+          <md-grid-tile class="md-hue-3"
+              md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1">
+            <md-grid-tile-footer>
+              <h3>Image 1</h3>
+            </md-grid-tile-footer>
+          </md-grid-tile>
+
+      </md-card-content>
+    </md-card>
+  </md-content>
+  
+
+
+
+
+
+
+
+
+
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript" src="js/app.js"></script>
+  <!--
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+  -->
+</body>
+</html>

@@ -1,0 +1,25 @@
+service: localitysearch
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  
+- url: /style
+  static_dir: style
+- url: /js
+  static_dir: js
+- url: /resources
+  static_dir: resources
+- url: /.*
+  script: server.app
+
+
+libraries:
+- name: jinja2
+  version: "2.6"
+- name: ssl
+  version: latest

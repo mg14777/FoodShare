@@ -1,0 +1,30 @@
+{% extends "templates/index.html" %}
+{% block page_content %}
+  <div class="landing-page">
+    <span>FOOD SHARE</span><br>
+    <span class="landing-page-subtitle">SAY GOODBYE TO FOOD WASTAGE</span>
+  </div>
+  <div layout-padding>
+    <h2>Top Contributions</h2>
+    <div flex-xs flex-gt-xs layout="row" layout-wrap>
+      {% for topItem in topContributions %}
+        <md-card style="width: 300px;">
+          <img src="/imgsrv?key={{topItem.key}}" class="item-image">
+          <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{topItem.food}}</span>
+                <span class="top-contributions-subhead md-subhead">By {{topItem.contributor}}</span>
+              </md-card-title-text>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+              <a href="/viewcontribution?key={{topItem.key}}">
+                <md-button class="md-primary">Details</md-button>
+              </a>
+          </md-card-actions>
+        </md-card>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
+  

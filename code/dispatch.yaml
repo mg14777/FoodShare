@@ -1,0 +1,20 @@
+dispatch:
+  
+  - url: "*/favicon.ico"
+    service: default
+
+  - url: "*/imgsrv"
+    service: imageservice
+
+  - url: "*/localitysearch"
+    service: localitysearch
+
+  - url: "*/uploadcontribution"
+    service: shareservice
+
+  - url: "*/contribution"
+    service: shareservice
+
+# Default service serves the typical web resources and all static resources.
+  - url: "*/default/*"
+    service: default

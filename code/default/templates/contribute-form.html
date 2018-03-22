@@ -1,0 +1,49 @@
+<md-dialog aria-label="Contribute Form" layout-padding>
+  <form action="/uploadcontribution" enctype="multipart/form-data" method="post" class="signup_form">
+    <div class="md-padding" layout-align="center">
+    <div layout="column">
+      <h2>Contribute</h2>
+      <md-input-container flex>
+          <label>Food Item</label>
+          <input type="text" name="food">
+      </md-input-container>
+      <md-input-container flex>
+          <label>Upload Picture</label>
+          <br>
+          <input type="file" name="pic">
+      </md-input-container>
+      <md-input-container>
+        <label>Address Line 1</label>
+        <input type="text" name="address">
+      </md-input-container>
+      <md-input-container>
+        <label>City</label>
+        <input type="text" name="city">
+      </md-input-container>
+      <md-input-container>
+        <label>Country</label>
+        <input type="text" name="country">
+      </md-input-container>
+      <md-input-container>
+        <label>Postcode</label>
+        <input type="text" name="postcode">
+      </md-input-container>
+      <md-input-container flex>
+          <label>Expiry (Number of Hours)</label>
+          <input type="text" name="expiry">
+      </md-input-container>
+      <md-input-container flex>
+          <label>Description</label>
+          <textarea name="description" rows="3" cols="60"></textarea>
+      </md-input-container>
+    </div>
+    
+
+    <md-card-actions layout="row" layout-align="center">
+        <br>
+        <center>
+            <md-button class="md-primary md-raised signup_button" type="submit">Submit</md-button>
+        </center>
+    </md-card-actions>
+  </form>
+</md-dialog>
